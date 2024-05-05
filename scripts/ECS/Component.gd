@@ -33,7 +33,10 @@ func get_id() -> int:
 ## This may be called without the need of an instance.
 ## Example: var player_health: ComponentHealth = ComponentHealth.get_by_id(Component.get_id_of_entity($Player))
 static func get_by_id(script: Script, id: int) -> Component:
-	return component_master_dict.get(script, {}).get(id, null)
+	var global_name: String = script.get_global_name()
+	var class_dict: Dictionary = component_master_dict.get(global_name, {})
+	var comp_found: Component = class_dict.get(id, null)
+	return comp_found
 
 	
 static func get_all(script: Script) -> Array[Component]:

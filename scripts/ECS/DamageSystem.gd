@@ -42,13 +42,6 @@ func _tick():
 			deal_damage(attacker_id, victim_id, hitbox.damage)
 			start_hurtbox_invul_timer(victim_id)
 			
-			print_debug("Entity {0} hit entity {1} for {2} damage".format(
-				[str(attacker_id), str(victim_id), str(hitbox.damage)])
-				)
-
-			
-				
-			
 		
 ## In the future, the function could take into account stats or other properties from the attacker to influence the attack.
 func deal_damage(attacker_id: int, victim_id: int, amount: int):
