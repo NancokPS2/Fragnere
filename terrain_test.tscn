@@ -1,0 +1,15 @@
+[gd_scene load_steps=4 format=3 uid="uid://dwmr80r7kf2xy"]
+
+[ext_resource type="Shader" path="res://terrain_test.gdshader" id="1_k0fib"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_ja0h1"]
+render_priority = 0
+shader = ExtResource("1_k0fib")
+
+[sub_resource type="SphereMesh" id="SphereMesh_bmvcb"]
+material = SubResource("ShaderMaterial_ja0h1")
+
+[node name="TerrainTest" type="Node3D"]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+mesh = SubResource("SphereMesh_bmvcb")
